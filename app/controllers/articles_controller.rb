@@ -35,6 +35,8 @@ class ArticlesController < ApplicationController
     else
       redirect_back fallback_location: request.referrer
     end
+  rescue Exception => exception
+    redirect_back fallback_location: request.referrer
   end
 
   # PATCH/PUT /articles/1 or /articles/1.json
