@@ -1,5 +1,6 @@
 require 'carrierwave/orm/activerecord'
 
+CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
 CarrierWave.configure do |config|
   config.fog_credentials = {
     provider: 'AWS',

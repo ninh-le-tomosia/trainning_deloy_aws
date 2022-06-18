@@ -7,10 +7,11 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by_id(params[:id])
+    binding.pry
     @user.update(permit_param)
-    redirect_back fallback_location: request.referrer
-  rescue Exception => exception
-    redirect_back fallback_location: request.referrer
+    # redirect_back fallback_location: request.referrer
+  # rescue Exception => exception
+    # redirect_back fallback_location: request.referrer
   end
 
   private
